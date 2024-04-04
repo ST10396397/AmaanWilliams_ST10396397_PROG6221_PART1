@@ -29,21 +29,23 @@ class Program
             switch (choice)
             {
                 case 1:
-                    Recipe EnterRecipeDetails();
+                    recipe.EnterRecipeDetails();
                     break;
                 case 2:
-                    Recipe DisplayRecipe();
+                    recipe.DisplayRecipe();
                     break;
                 case 3:
-                    Recipe ScaleRecipe(factor);
-                    Recipe DisplayRecipe();
+                    Console.Write("Enter scaling factor (0.5, 2, or 3) ");
+                    double factor = double.Parse(Console.ReadLine());
+                    recipe .ScaleRecipe(factor);
+                    recipe .DisplayRecipe();
                     break;
                 case 4:
-                    Recipe ResetQuantities();
-                    Recipe DispalyRecipe();
+                    recipe .ResetQuantities();
+                    recipe .DisplayRecipe();
                     break;
                 case 5:
-                    Recipe ClearRecipe();
+                    recipe .ClearRecipe();
                     break;
                 case 6:
                     exit = true;
