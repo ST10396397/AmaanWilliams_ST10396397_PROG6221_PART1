@@ -15,15 +15,19 @@ class Program
         while (!exit)
         {
 
-            Console.WriteLine("\nOptions:");
+           
+            Console.WriteLine("Recipe storage");
+            Console.WriteLine("-----------------------------------------");
             Console.WriteLine("1. Enter recipe details");
             Console.WriteLine("2. Display recipe");
             Console.WriteLine("3. Scale recipe");
             Console.WriteLine("4. Reset quantities");
             Console.WriteLine("5. Clear recipe");
             Console.WriteLine("6. Exit");
+            Console.WriteLine("-----------------------------------------");
 
             Console.WriteLine("Enter your choice: ");
+            Console.WriteLine("-----------------------------------------");
             int choice = int.Parse(Console.ReadLine());
 
             switch (choice)
@@ -36,6 +40,7 @@ class Program
                     break;
                 case 3:
                     Console.Write("Enter scaling factor (0.5, 2, or 3) ");
+                    Console.WriteLine("-----------------------------------------");
                     double factor = double.Parse(Console.ReadLine());
                     recipe .ScaleRecipe(factor);
                     recipe .DisplayRecipe();
