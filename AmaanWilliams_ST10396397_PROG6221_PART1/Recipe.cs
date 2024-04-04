@@ -36,9 +36,7 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
 
         }
 
-        private int ReadIntegerInput()
-        { 
-        }
+        
 
     }
 }
