@@ -48,11 +48,14 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
             Console.WriteLine("Ingredients: ");
             Console.WriteLine("Steps ");
             foreach (var ingredient in ingredients)
-            foreach (var step in steps)
-
+ 
             {
                 Console.WriteLine($"- {ingredient}");
-                Console.WriteLine($"- {step}");
+            }
+            Console.WriteLine("\nSteps");
+            for(int i = 0;i < steps.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {steps[i]}");
             }
         }
 
