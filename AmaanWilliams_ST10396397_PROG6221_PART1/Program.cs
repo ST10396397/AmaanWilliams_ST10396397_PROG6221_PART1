@@ -35,26 +35,31 @@ class Program
                 case 1:
                     recipe.EnterRecipeDetails();
                     break;
+
                 case 2:
                     recipe.DisplayRecipe();
                     break;
+
                 case 3:
                     Console.Write("Enter scaling factor (0.5, 2, or 3) ");
-                    Console.WriteLine("-----------------------------------------");
                     double factor = double.Parse(Console.ReadLine());
                     recipe .ScaleRecipe(factor);
                     recipe .DisplayRecipe();
                     break;
+
                 case 4:
                     recipe .ResetQuantities();
                     recipe .DisplayRecipe();
                     break;
+
                 case 5:
                     recipe .ClearRecipe();
                     break;
+
                 case 6:
                     exit = true;
                     break;
+
                 default:
                     Console.WriteLine("Invalid chose. Please choose a number between 1 and 6");
                     break;

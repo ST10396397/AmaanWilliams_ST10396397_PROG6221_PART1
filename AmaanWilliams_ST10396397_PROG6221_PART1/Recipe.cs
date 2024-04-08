@@ -13,42 +13,31 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
         private string[] steps;
 
         public void EnterRecipeDetails()
-        {
-            
-            Console.WriteLine("-----------------------------------------");
+        {  
             Console.WriteLine("Enter number of ingredients ");
             int ingredientCount = int.Parse(Console.ReadLine());
-
-            ingredients = new string[ingredientCount];
-            Console.WriteLine("-----------------------------------------");
-            Console.WriteLine("Enter details for each ingredient: ");
-            Console.WriteLine("-----------------------------------------");
+            ingredients = new string[ingredientCount];           
+            Console.WriteLine("Enter details for each ingredient: ");          
             for (int i = 0; i < ingredientCount; i++)
+
             {
                 Console.WriteLine($"Ingredient {i + 1} - Name: ");
-                string name = Console.ReadLine();
-
-                Console.WriteLine("-----------------------------------------");
+                string name = Console.ReadLine();           
                 Console.WriteLine($"Quantity: ");
                 string quantity = Console.ReadLine();
-                Console.WriteLine("-----------------------------------------");
                 Console.WriteLine($"Unit of measurement: ");
                 string unit = Console.ReadLine();
-
                 ingredients[i] = $"{quantity} {unit} of {name}";
             }
 
             Console.WriteLine("Enter the number of steps: ");
-            Console.WriteLine("-----------------------------------------");
             int stepCount = int.Parse(Console.ReadLine());
 
             steps = new string[stepCount];
             Console.WriteLine("Enter details for each step: ");
-            Console.WriteLine("-----------------------------------------");
             for (int i = 0; i < stepCount; i++)
             {
                 Console.Write($"Step {i + 1}: ");
-                Console.WriteLine("-----------------------------------------");
                 steps[i] = Console.ReadLine();
             }
         }
@@ -56,10 +45,8 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
         public void DisplayRecipe()
         {
             Console.WriteLine("\nRecipe: ");
-            Console.WriteLine("-----------------------------------------");
             Console.WriteLine("Ingredients: ");
             Console.WriteLine("Steps ");
-            Console.WriteLine("-----------------------------------------");
             foreach (var ingredient in ingredients)
             foreach (var step in steps)
 
@@ -71,7 +58,13 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
 
         public void ScaleRecipe(double factor)
         {
+            for (int i = 0;i < ingredients.Length; i++)
+            {
+                String[] parts = ingredients[i].Split(' ');
+                double quantity = double.Parse(parts[0]) * factor;
+                ingredients[i] = $"{quantity} {parts[1]} of {parts[4]}";
 
+            }
         }
 
         public void ResetQuantities()
@@ -81,10 +74,10 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
 
         public void ClearRecipe()
         {
-
+            ingredients = null;
+            steps = null;
         }
 
-        
 
     }
 }
