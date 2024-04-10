@@ -25,7 +25,6 @@ class Program
             Console.WriteLine("5. Clear recipe");
             Console.WriteLine("6. Exit");
             Console.WriteLine("-----------------------------------------");
-
             Console.WriteLine("Enter your choice: ");
             Console.WriteLine("-----------------------------------------");
             int choice = int.Parse(Console.ReadLine());

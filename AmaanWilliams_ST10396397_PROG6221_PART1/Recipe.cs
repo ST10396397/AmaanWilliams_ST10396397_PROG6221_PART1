@@ -11,6 +11,8 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
     {
         private string[] ingredients;
         private string[] steps;
+        private double[] originalQuantities; 
+
 
         public void EnterRecipeDetails()
         {  
@@ -46,8 +48,7 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
         {
             Console.WriteLine("\nRecipe: ");
             Console.WriteLine("Ingredients: ");
-            Console.WriteLine("Steps ");
-            foreach (var ingredient in ingredients)
+            foreach (string ingredient in ingredients)
  
             {
                 Console.WriteLine($"- {ingredient}");
@@ -61,18 +62,41 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
 
         public void ScaleRecipe(double factor)
         {
-            for (int i = 0;i < ingredients.Length; i++)
+            for (int i = 0; i < ingredients.Length; i++)
             {
-                String[] parts = ingredients[i].Split(' ');
-                double quantity = double.Parse(parts[0]) * factor;
-                ingredients[i] = $"{quantity} {parts[1]} of {parts[4]}";
+                string[] parts = ingredients[i].Split(' ');
+                double originalQuantity = double.Parse(parts[0]);
+                string unit = parts[1];
+                string name = string.Join(" ", parts, 3, parts.Length - 3); // Joining the name parts together
+                double scaledQuantity;
 
+                // Calculate scaled quantity based on the factor
+                if (factor == 0.5)
+                {
+                    scaledQuantity = originalQuantity * 0.5;
+                }
+                else if (factor == 2)
+                {
+                    scaledQuantity = originalQuantity * 2;
+                }
+                else if (factor == 3)
+                {
+                    scaledQuantity = originalQuantity * 3;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid scaling factor.");
+                    return;
+                }
+
+                // Update the ingredient with the scaled quantity
+                ingredients[i] = $"{scaledQuantity} {unit} of {name}";
             }
         }
 
         public void ResetQuantities()
         {
-
+            
         }
 
         public void ClearRecipe()
