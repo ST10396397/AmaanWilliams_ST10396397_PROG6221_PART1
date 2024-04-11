@@ -11,20 +11,21 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
     {
         private string[] ingredients;
         private string[] steps;
-        private double[] originalQuantities; 
-
+        private double[] originalQuantities;
+        private object originalIngredients;
 
         public void EnterRecipeDetails()
-        {  
+            //This code is for the Enter recipe details like ingrdients, quantity and measurement
+        {
             Console.WriteLine("Enter number of ingredients ");
             int ingredientCount = int.Parse(Console.ReadLine());
-            ingredients = new string[ingredientCount];           
-            Console.WriteLine("Enter details for each ingredient: ");          
+            ingredients = new string[ingredientCount];
+            Console.WriteLine("Enter details for each ingredient: ");
             for (int i = 0; i < ingredientCount; i++)
 
             {
                 Console.WriteLine($"Ingredient {i + 1} - Name: ");
-                string name = Console.ReadLine();           
+                string name = Console.ReadLine();
                 Console.WriteLine($"Quantity: ");
                 string quantity = Console.ReadLine();
                 Console.WriteLine($"Unit of measurement: ");
@@ -45,22 +46,25 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
         }
 
         public void DisplayRecipe()
+            //This is to display the ingredients for the display recipe
         {
             Console.WriteLine("\nRecipe: ");
             Console.WriteLine("Ingredients: ");
             foreach (string ingredient in ingredients)
- 
+
             {
                 Console.WriteLine($"- {ingredient}");
             }
+            //This is to display the steps for display recipe
             Console.WriteLine("\nSteps");
-            for(int i = 0;i < steps.Length; i++)
+            for (int i = 0; i < steps.Length; i++)
             {
                 Console.WriteLine($"{i + 1}. {steps[i]}");
             }
         }
 
         public void ScaleRecipe(double factor)
+            //this is the scale part consisting of 0.5, 2 and 3
         {
             for (int i = 0; i < ingredients.Length; i++)
             {
@@ -96,11 +100,14 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
 
         public void ResetQuantities()
         {
+            //this code is to reset the recipe to its orginal value
             
+
         }
 
         public void ClearRecipe()
         {
+            //This is to clear the recipe
             ingredients = null;
             steps = null;
         }
