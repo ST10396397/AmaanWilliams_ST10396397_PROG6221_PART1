@@ -1,4 +1,4 @@
-This Readme file is to expalain how to run the recipe application I created on visual studio 2022 using c#.
+This Readme file is to explain how to run the recipe application I created on visual studio 2022 using c#.
 Using visual studio code open the application.
 When the application is open go to the ribbon and look for the build. When you have found build click on it and go to rebuild solution.
 Once the rebuild is succeful you have to go to the green play button in the ribbon to start the application.
