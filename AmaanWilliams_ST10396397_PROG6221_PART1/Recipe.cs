@@ -101,8 +101,9 @@ namespace AmaanWilliams_ST10396397_PROG6221_PART1
         public void ResetQuantities()
         {
             //this code is to reset the recipe to its orginal value
-            
+            ingredients = (string[])originalIngredients;
 
+            Console.WriteLine("Quantities reset to original values.");
         }
 
         public void ClearRecipe()
